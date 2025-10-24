@@ -1,0 +1,21 @@
+This directory should contain 8 placeholder images named p1.jpg through p8.jpg.
+
+These images represent product photos and should have different aspect ratios to demonstrate
+the cumulative layout shift (CLS) issues when using plain <img> tags without dimensions.
+
+For the interview, you can:
+1. Use any placeholder service like https://picsum.photos/300/400 
+2. Create simple colored rectangles in any image editor
+3. Use stock photos if available
+
+Recommended sizes for variety:
+- p1.jpg: 300x400 (portrait)
+- p2.jpg: 400x300 (landscape) 
+- p3.jpg: 300x300 (square)
+- p4.jpg: 350x500 (tall portrait)
+- p5.jpg: 500x250 (wide landscape)
+- p6.jpg: 400x400 (large square)
+- p7.jpg: 320x480 (portrait)
+- p8.jpg: 450x300 (landscape)
+
+The varying aspect ratios will cause layout shifts when images load without explicit dimensions.

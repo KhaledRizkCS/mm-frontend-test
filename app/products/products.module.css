@@ -1,0 +1,91 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+
+.productTile {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  transition: box-shadow 0.2s ease;
+}
+
+.productTile:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* INTENTIONAL PROBLEM: Some styles mixed with inline styles in components */
+.productImage {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.productName {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.productPrice {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.addButton {
+  background: #007bff;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border: none;
+  width: 100%;
+}
+
+.addButton:hover {
+  background: #0056b3;
+}
+
+.addButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
