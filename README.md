@@ -1,16 +1,16 @@
 # Frontend Interview - Product Catalog
 
-This is a 90-minute frontend interview project featuring a flawed product catalog application. The candidate will audit issues, propose refactoring approaches, and implement focused fixes.
+This is a 60-minute frontend interview project featuring a flawed product catalog application. The candidate will audit issues, propose refactoring approaches, and implement focused fixes.
 
 ## Purpose
 
 This Next.js application contains intentional architectural, accessibility, styling, and performance issues that mirror common real-world problems. Candidates will demonstrate their ability to identify problems and implement solutions systematically.
 
-## Interview Flow (90 minutes)
+## Interview Flow (60 minutes)
 
 - **5m** - Introduction and project walkthrough
-- **35m** - Issue audit and refactor discussion  
-- **35m** - Hands-on coding task
+- **20m** - Issue audit and refactor discussion  
+- **20m** - Hands-on coding task
 - **10m** - Deep dive technical Q&A
 - **5m** - Wrap-up and next steps
 
