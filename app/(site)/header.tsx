@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// INTENTIONAL PROBLEM: over-broad icon import for just one icon
 import * as Icons from '../components/icons';
 
 export default function Header() {
@@ -7,7 +6,7 @@ export default function Header() {
     <header style={{ 
       background: '#f8f9fa', 
       borderBottom: '1px solid #dee2e6',
-      padding: '16px 24px' // Different spacing than other parts - intentional inconsistency
+      padding: '16px 24px'
     }}>
       <div className="container">
         <div className="flex" style={{ 
@@ -29,15 +28,14 @@ export default function Header() {
                 Products
               </Link>
               
-              {/* Fake cart icon with inconsistent styling */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '6px 14px', // More magic numbers - different from globals
+                padding: '6px 14px',
                 background: '#007bff',
                 color: 'white',
-                borderRadius: '5px', // Different radius than other elements
+                borderRadius: '5px',
                 fontSize: '0.9rem'
               }}>
                 <Icons.CartIcon />

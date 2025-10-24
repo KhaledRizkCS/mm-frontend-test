@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import styles from './products.module.css';
-// INTENTIONAL PROBLEM: Heavy icon import - imports entire module
 import * as Icons from '../components/icons';
 
 interface Product {
@@ -21,7 +20,6 @@ export default function ProductsPage() {
   const [category, setCategory] = useState('');
   const [inStock, setInStock] = useState(false);
 
-  // INTENTIONAL PROBLEM: Client-side fetch causing FOUC, double fetch in dev
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -34,7 +32,6 @@ export default function ProductsPage() {
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
-        // INTENTIONAL PROBLEM: No error handling UI
         console.error('Failed to fetch products:', error);
       }
     };
@@ -53,10 +50,8 @@ export default function ProductsPage() {
         </p>
       </div>
 
-      {/* INTENTIONAL PROBLEM: Filters don't sync with URL */}
       {/* TODO: Sync filters with URL (useSearchParams/useRouter) */}
       <div className={styles.filters}>
-        {/* INTENTIONAL PROBLEM: Inputs without labels */}
         <input
           type="text"
           value={query}
@@ -83,24 +78,20 @@ export default function ProductsPage() {
             checked={inStock}
             onChange={(e) => setInStock(e.target.checked)}
           />
-          {/* INTENTIONAL PROBLEM: Label not properly associated */}
           <span onClick={() => setInStock(!inStock)} style={{ cursor: 'pointer' }}>
             In Stock Only
           </span>
         </div>
       </div>
 
-      {/* INTENTIONAL PROBLEM: No loading state, causes FOUC */}
       {products.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '4rem', color: '#666' }}>
           No products found
         </div>
       ) : (
         <div className={styles.grid}>
-          {/* INTENTIONAL PROBLEM: Repeated inline product tiles with slight differences */}
           {products.slice(0, 3).map((product) => (
             <div key={product.id} className={styles.productTile} style={{ padding: 13 }}>
-              {/* INTENTIONAL PROBLEM: Plain <img> without dimensions causing CLS */}
               <img
                 src={product.imageUrl}
                 alt={product.name}
@@ -110,7 +101,6 @@ export default function ProductsPage() {
               <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#007bff', marginBottom: '8px' }}>
                 ¥{product.price.toLocaleString()}
               </p>
-              {/* INTENTIONAL PROBLEM: Rating as text, not semantic */}
               <p style={{ color: '#666', marginBottom: '12px' }}>
                 Rating: {product.rating}/5
               </p>
@@ -121,7 +111,6 @@ export default function ProductsPage() {
               }}>
                 {product.inStock ? 'In Stock' : 'Out of Stock'}
               </p>
-              {/* INTENTIONAL PROBLEM: Div acting as button */}
               <div
                 onClick={() => alert(`Added ${product.name} to cart`)}
                 style={{
@@ -139,7 +128,6 @@ export default function ProductsPage() {
             </div>
           ))}
 
-          {/* INTENTIONAL PROBLEM: Second batch with different markup pattern */}
           {products.slice(3, 6).map((product) => (
             <div key={product.id} style={{
               border: '1px solid #ddd',
@@ -147,20 +135,17 @@ export default function ProductsPage() {
               padding: '16px', // Different padding than above
               background: 'white'
             }}>
-              {/* INTENTIONAL PROBLEM: Different img styling */}
               <img
                 src={product.imageUrl}
                 alt=""
                 style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '6px' }}
               />
               <div style={{ marginTop: '14px' }}>
-                {/* INTENTIONAL PROBLEM: Inconsistent heading levels */}
               <h4 style={{ fontSize: '1.1rem', marginBottom: '6px' }}>{product.name}</h4>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
                   <span style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#333' }}>
                     ¥{product.price.toLocaleString()}
                   </span>
-                  {/* INTENTIONAL PROBLEM: Rating as spans, not accessible */}
                   <div>
                     {Array.from({ length: 5 }, (_, i) => (
                       <span key={i} style={{ color: i < product.rating ? '#ffd700' : '#ddd' }}>
@@ -189,7 +174,6 @@ export default function ProductsPage() {
             </div>
           ))}
 
-          {/* INTENTIONAL PROBLEM: Third pattern with more inline styles */}
           {products.slice(6).map((product) => (
             <div key={product.id} style={{
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
@@ -204,7 +188,6 @@ export default function ProductsPage() {
                 style={{ width: '100%', height: '180px', objectFit: 'cover' }}
               />
               <div style={{ padding: '18px' }}>
-                {/* INTENTIONAL PROBLEM: More inconsistent heading levels */}
                 <h2 style={{ 
                   fontSize: '1.3rem', 
                   marginBottom: '10px',
@@ -226,7 +209,6 @@ export default function ProductsPage() {
                   <Icons.StarIcon />
                   <span style={{ color: '#666' }}>{product.rating}</span>
                 </div>
-                {/* INTENTIONAL PROBLEM: Another div button */}
                 <div
                   onClick={() => alert(`Added ${product.name} to cart`)}
                   style={{

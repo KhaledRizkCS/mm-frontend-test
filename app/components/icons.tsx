@@ -47,8 +47,6 @@ export function HeartIcon() {
   );
 }
 
-// INTENTIONAL PROBLEM: Heavy export pattern that imports all icons
-// This creates a performance issue when using import * as Icons
 const icons = {
   CartIcon,
   StarIcon,

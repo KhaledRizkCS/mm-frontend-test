@@ -1,4 +1,4 @@
-/* Global styles with intentional problems for interview */
+/* Global styles */
 
 * {
   box-sizing: border-box;
@@ -19,29 +19,26 @@ body {
   background: #fff;
 }
 
-/* INTENTIONAL PROBLEM: Global button outline removal - bad for a11y */
 button {
-  outline: none; /* This is bad - suppresses focus indicators */
+  outline: none;
   cursor: pointer;
 }
 
-/* INTENTIONAL PROBLEM: Magic spacing numbers without design system */
 .header {
-  padding: 13px 17px; /* Magic numbers - should be design tokens */
-  margin: 8px 12px; /* More magic numbers */
+  padding: 13px 17px;
+  margin: 8px 12px;
 }
 
 .main-content {
-  padding: 19px 23px; /* Even more magic numbers */
+  padding: 19px 23px;
 }
 
-/* INTENTIONAL PROBLEM: Missing color design tokens */
 .primary-color {
-  color: #007bff; /* Should be a CSS custom property */
+  color: #007bff;
 }
 
 .secondary-color {
-  color: #6c757d; /* Another hardcoded color */
+  color: #6c757d;
 }
 
 /* Basic layout utilities */
